@@ -7,14 +7,13 @@ export const Nav = styled.nav`
   background-color: #000;
   height: 80px;
   /* margin-top: -80px; */
-  display: flex;
+  /*  display: flex; */
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   position: sticky;
   top: 0;
-  z-index: 10;
-
+  display: ${({ isOpen }) => (isOpen ? "none" : "flex")};
   @media screen and(max-width: 960px) {
     transition: 0.8s all ease;
   }

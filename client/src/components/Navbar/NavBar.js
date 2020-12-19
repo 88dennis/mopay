@@ -2,10 +2,10 @@ import React from "react";
 import {FaBars} from 'react-icons/fa'
 import {Nav,NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavBarElements';
 
-const NavBar = ({toggle}) => {
+const NavBar = ({toggle, isOpen}) => {
   return (
     <>
-        <Nav>
+        <Nav isOpen={isOpen}>
             <NavbarContainer>
                 <NavLogo to="/">
                     mopay
