@@ -1,13 +1,50 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {FaBars} from 'react-icons/fa'
 import {Nav,NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavBarElements';
+import {IconContext } from 'react-icons/lib';
+
+import {animateScroll as scroll } from 'react-scroll';
 
 const NavBar = ({toggle, isOpen}) => {
+
+    const [scrollNav, setScrollNav] = useState(false);
+
+    const changeNav = ()=> {
+        if(window.scrollY >= 80) {
+            setScrollNav(true);
+        } else {
+            setScrollNav(false);
+
+        }
+    }
+
+    useEffect(()=>{
+        window.addEventListener('scroll', changeNav)
+
+        return ()=>{
+            window.removeEventListener('scroll', changeNav)
+        }
+    },[]);
+
+    const toggleHome = ()=>{
+        scroll.scrollToTop();
+    }
+
+   function handleSetActive(to) {
+        console.log(to);
+      }
+
+      function handleSetInactive(from) {
+        console.log(from);
+
+      }
   return (
     <>
-        <Nav isOpen={isOpen}>
+
+    <IconContext.Provider value={{color: '#fff'}}>
+        <Nav isOpen={isOpen} scrollNav={scrollNav}>
             <NavbarContainer>
-                <NavLogo to="/">
+                <NavLogo to="/" onClick={toggleHome}>
                     mopay
                 </NavLogo>
 
@@ -17,22 +54,67 @@ const NavBar = ({toggle, isOpen}) => {
 
                 <NavMenu>
                     <NavItem>
-                        <NavLinks to="about">
+                        <NavLinks 
+                        to="about"
+                        smooth={true}
+                        duration={200}
+                        spy={true}
+                        // hashSpy={true}
+                        isDynamic={true}
+                        exact='true'
+                        offset={-80}
+                        activeClass="active"
+                        // onSetActive={handleSetActive}
+                        // onSetInactive={handleSetInactive}
+                        >
                             About
                         </NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to="discover">
+                        <NavLinks to="discover"
+                             smooth={true}
+                             duration={200}
+                             spy={true}
+                            //  hashSpy={true}
+                             isDynamic={true}
+                             exact='true'
+                             offset={-80}
+                             activeClass="active"
+                            //  onSetActive={handleSetActive}
+                            //  onSetInactive={handleSetInactive}
+                        >
                             Discover
                         </NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to="services">
+                        <NavLinks to="services"
+                            smooth={true}
+                            duration={200}
+                            spy={true}
+                            // hashSpy={true}
+                            isDynamic={true}
+                            exact='true'
+                            offset={-80}
+                            activeClass="active"
+                            // onSetActive={handleSetActive}
+                            // onSetInactive={handleSetInactive}
+                        >
                             Services
                         </NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to="signup">
+                        <NavLinks to="signup"
+                            smooth={true}
+                            duration={200}
+                            spy={true}
+                            // hashSpy={true}
+                            isDynamic={true}
+                            exact='true'
+                            offset={-80}
+                            activeClass="active"
+                            // onSetActive={handleSetActive}
+                            // onSetInactive={handleSetInactive}
+                        >
                             Signup
                         </NavLinks>
                     </NavItem>
@@ -45,6 +127,7 @@ const NavBar = ({toggle, isOpen}) => {
                     </NavBtn>
             </NavbarContainer>
         </Nav>
+        </IconContext.Provider>
     </>
   );
 };
