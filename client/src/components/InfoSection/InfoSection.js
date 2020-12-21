@@ -16,6 +16,7 @@ import {
 
 const InfoSection = (
     {
+        //destructure all from Data.js
         id,
         lightBg,
         lightText,
@@ -30,7 +31,8 @@ const InfoSection = (
         dark,
         primary,
         darkText,
-        dark2
+        dark2,
+        navigateTo
     }
 ) => {
 
@@ -55,8 +57,7 @@ const InfoSection = (
                                     primary={primary ? 1 : 0} 
                                     dark={dark ? 1 : 0} 
                                     dark2={dark2 ? 1 : 0} 
-
-                                    to="home">{buttonLabel}</Button>
+                                    to={navigateTo}>{buttonLabel}</Button>
                                 </BtnWrap>
                             </TextWrapper>
                         </Column1>

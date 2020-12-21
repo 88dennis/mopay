@@ -18,7 +18,8 @@ export const homeObjOne = {
     alt: 'Car',
     dark: true,
     primary: true,
-    darkText: false
+    darkText: false,
+    navigateTo: "signup"
 };
 
 export const homeObjTwo = {
@@ -35,7 +36,8 @@ export const homeObjTwo = {
     alt: 'Piggybank',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    navigateTo: "services"
 };
 
 
@@ -53,5 +55,6 @@ export const homeObjThree = {
     alt: 'Papers',
     dark: true,
     primary: true,
-    darkText: false
+    darkText: false,
+    navigateTo: "home"
 };

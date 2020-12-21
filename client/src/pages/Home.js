@@ -4,6 +4,8 @@ import Sidebar from '../components/Sidebar/Sidebar';
 import HeroSection from '../components/HeroSection/HeroSection';
 import InfoSection from '../components/InfoSection/InfoSection';
 import Services from '../components/Services/Services';
+import Footer from '../components/Footer/Footer';
+
 
 import {homeObjOne} from '../components/InfoSection/Data';
 import {homeObjTwo} from '../components/InfoSection/Data';
@@ -28,8 +30,11 @@ console.log(homeObjOne)
             <HeroSection />
             <InfoSection {...homeObjOne} />
             <InfoSection {...homeObjTwo} />
-            <InfoSection {...homeObjThree} />
             <Services  />
+            <InfoSection {...homeObjThree} />
+          
+            <Footer  />
+
         </div>
     )
 }
