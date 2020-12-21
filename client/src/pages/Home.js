@@ -3,6 +3,8 @@ import NavBar from '../components/Navbar/NavBar';
 import Sidebar from '../components/Sidebar/Sidebar';
 import HeroSection from '../components/HeroSection/HeroSection';
 import InfoSection from '../components/InfoSection/InfoSection';
+import Services from '../components/Services/Services';
+
 import {homeObjOne} from '../components/InfoSection/Data';
 import {homeObjTwo} from '../components/InfoSection/Data';
 import {homeObjThree} from '../components/InfoSection/Data';
@@ -27,10 +29,7 @@ console.log(homeObjOne)
             <InfoSection {...homeObjOne} />
             <InfoSection {...homeObjTwo} />
             <InfoSection {...homeObjThree} />
-
-
-
-
+            <Services  />
         </div>
     )
 }
