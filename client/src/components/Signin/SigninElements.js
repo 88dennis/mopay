@@ -10,7 +10,8 @@ export const Container = styled.div`
     top: 0;
     */
     z-index: 0;
-    overflow: hidden;
+   /* overflow: hidden; */
+   height: 100vh;
     background: linear-gradient(
         108deg,
         rgba(1,147,86,1) 0%,
